@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G2N-tF-oCb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Translate View Controller-->
+        <scene sceneID="D14-Nf-KkE">
+            <objects>
+                <viewController id="G2N-tF-oCb" customClass="TranslateViewController" customModule="Translate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ezf-5M-Rcm" userLabel="Translate View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-xe-jNI" userLabel="Add Word Text Field">
+                                <rect key="frame" x="15" y="59" width="384" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnj-uk-QkE" userLabel="Add Word Button">
+                                <rect key="frame" x="15" y="108" width="384" height="36"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add word">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addWordPressed:" destination="G2N-tF-oCb" eventType="touchUpInside" id="Bf1-HX-gVI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-yX-XGd" userLabel="Show Full Button">
+                                <rect key="frame" x="35" y="811" width="344" height="36"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Show full message">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFullPressed:" destination="G2N-tF-oCb" eventType="touchUpInside" id="qR8-hj-Sa8"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RAV-ny-6yO" userLabel="Word Table View">
+                                <rect key="frame" x="15" y="159" width="384" height="637"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wordCell" textLabel="frQ-zO-PPG" style="IBUITableViewCellStyleDefault" id="UGO-PS-jDA" userLabel="Word Table View Cell">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGO-PS-jDA" id="1mv-KB-uxl" userLabel="Word Content View">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="frQ-zO-PPG">
+                                                    <rect key="frame" x="20" y="0.0" width="344" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DpW-B0-wTL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XbU-xe-jNI" firstAttribute="leading" secondItem="DpW-B0-wTL" secondAttribute="leading" constant="15" id="5Nh-95-FN4"/>
+                            <constraint firstItem="RAV-ny-6yO" firstAttribute="top" secondItem="vnj-uk-QkE" secondAttribute="bottom" constant="15" id="AHN-eh-evq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bxf-yX-XGd" secondAttribute="trailing" constant="15" id="Dok-ZI-w67"/>
+                            <constraint firstItem="XbU-xe-jNI" firstAttribute="top" secondItem="DpW-B0-wTL" secondAttribute="top" constant="15" id="EGy-yg-3Sz"/>
+                            <constraint firstItem="DpW-B0-wTL" firstAttribute="trailing" secondItem="RAV-ny-6yO" secondAttribute="trailing" constant="15" id="Kpo-6T-sEu"/>
+                            <constraint firstItem="vnj-uk-QkE" firstAttribute="top" secondItem="XbU-xe-jNI" secondAttribute="bottom" constant="15" id="PGZ-at-pTe"/>
+                            <constraint firstItem="DpW-B0-wTL" firstAttribute="trailing" secondItem="XbU-xe-jNI" secondAttribute="trailing" constant="15" id="Xhb-TS-QAl"/>
+                            <constraint firstItem="Bxf-yX-XGd" firstAttribute="leading" secondItem="Ezf-5M-Rcm" secondAttribute="leadingMargin" constant="15" id="Zff-Lx-Y4a"/>
+                            <constraint firstItem="RAV-ny-6yO" firstAttribute="leading" secondItem="DpW-B0-wTL" secondAttribute="leading" constant="15" id="cDB-Nd-9gu"/>
+                            <constraint firstItem="DpW-B0-wTL" firstAttribute="trailing" secondItem="vnj-uk-QkE" secondAttribute="trailing" constant="15" id="e8s-6d-aN4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Bxf-yX-XGd" secondAttribute="bottom" constant="15" id="g9X-bc-wrS"/>
+                            <constraint firstItem="Bxf-yX-XGd" firstAttribute="top" secondItem="RAV-ny-6yO" secondAttribute="bottom" constant="15" id="gq4-AN-qH2"/>
+                            <constraint firstItem="vnj-uk-QkE" firstAttribute="leading" secondItem="DpW-B0-wTL" secondAttribute="leading" constant="15" id="ixU-e0-Tq3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addWordTextField" destination="XbU-xe-jNI" id="RaA-MY-pjA"/>
+                        <outlet property="wordTableView" destination="RAV-ny-6yO" id="uZc-I2-OUJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mX-q5-YDu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
